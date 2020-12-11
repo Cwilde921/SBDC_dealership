@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if os.path.exists('my_site/secrets.json'):
    # read secrets from json file
     with open('my_site/secrets.json') as f:
-        SECRET_KEY = json.load(f)['secret_key']
+        SECRET_KEY = json.load(f)["secret_key"]
 # else:
 #    SECRET_KEY = ""
 
