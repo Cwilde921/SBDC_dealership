@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-if os.path.exists('_secrets.json'):
+if os.path.exists('secrets.json'):
    # read secrets from json file
     with open('secrets.json') as f:
         SECRET_KEY = json.load(f)['secret_key']
