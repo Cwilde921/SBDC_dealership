@@ -9,3 +9,6 @@ class Car(models.Model):
 
     def __str__(self):
         return str(self.make) + " " + str(self.model)
+        
+    def __iter__(self):
+        return iter([self.make, self.model, self.color, self.price])

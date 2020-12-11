@@ -1,0 +1,16 @@
+{% if cars %}
+    <ol>
+    {% for car in cars %}
+        <li>
+        <ul>
+            <li>{{ car.make }}</li>
+            <li>{{ car.model }}</li>
+            <li>{{ car.color }}</li>
+            <li>{{ car.price }}</li>
+        </ul>
+        </li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <p>No cars are available.</p>
+{% endif %}
