@@ -6,11 +6,19 @@
 	<head>
 		<meta charset="utf-8"/>
 		<link rel="stylesheet" href="{% static 'dealership/style.css' %}" type="text/css"/>
-		<title>"Car Info"</title>
+        <title>"Car Info"</title>
+        <!-- <script>
+            var static_dir = static
+        </script> -->
 	</head>
 
 <body>
     <script src="{% static 'dealership/cars.js' %}"></script>
+    <div class='blue top_container'>
+        <img src="{% static 'dealership/dealership_logo.jpg' %}" alt="dealership logo" class=logo_image>
+        <h1>SBDC dealership</h1>
+    </div>
+    <div class='blue left_container'></div>
     <div class='body_container'>
     {% if cars %}
         <ol>
