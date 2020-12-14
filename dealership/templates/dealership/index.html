@@ -1,16 +1,40 @@
-{% if cars %}
-    <ol>
-    {% for car in cars %}
-        <li>
-        <ul>
-            <li>{{ car.make }}</li>
-            <li>{{ car.model }}</li>
-            <li>{{ car.color }}</li>
-            <li>{{ car.price }}</li>
-        </ul>
-        </li>
-    {% endfor %}
-    </ol>
-{% else %}
-    <p>No cars are available.</p>
-{% endif %}
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="{% static 'dealership/style.css' %}" type="text/css"/>
+        <title>"Car Info"</title>
+	</head>
+
+<body>
+    <!-- create top div -->
+    <div class='blue top_container'>
+        <img src="{% static 'dealership/dealership_logo.jpg' %}" alt="dealership logo" class='logo_image'>
+        <h1>SBDC dealership</h1>
+    </div>
+    <!-- create left div -->
+    <div class='blue left_container'></div>
+    <!-- create center div -->
+    <div class='body_container'>
+        {% if cars %}
+            <ol>
+            {% for car in cars %}
+                <li>
+                <p>Link to a detailed view of vehicle here</p>
+                    <ul>
+                        <li>{{ car.make }}</li>
+                        <li>{{ car.model }}</li>
+                        <li>{{ car.color }}</li>
+                        <li>{{ car.price }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+            </ol>
+        {% else %}
+            <p>No cars are available.</p>
+        {% endif %}
+    </div>
+</body>
