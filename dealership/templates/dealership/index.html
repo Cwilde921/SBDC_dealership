@@ -1,16 +1,32 @@
-{% if cars %}
-    <ol>
-    {% for car in cars %}
-        <li>
-        <ul>
-            <li>{{ car.make }}</li>
-            <li>{{ car.model }}</li>
-            <li>{{ car.color }}</li>
-            <li>{{ car.price }}</li>
-        </ul>
-        </li>
-    {% endfor %}
-    </ol>
-{% else %}
-    <p>No cars are available.</p>
-{% endif %}
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="{% static 'dealership/style.css' %}" type="text/css"/>
+		<title>"Car Info"</title>
+	</head>
+
+<body>
+    <script src="{% static 'dealership/cars.js' %}"></script>
+    <div class='body_container'>
+    {% if cars %}
+        <ol>
+        {% for car in cars %}
+            <li>
+            <ul>
+                <li>{{ car.make }}</li>
+                <li>{{ car.model }}</li>
+                <li>{{ car.color }}</li>
+                <li>{{ car.price }}</li>
+            </ul>
+            </li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>No cars are available.</p>
+    {% endif %}
+    </div>
+</body>
